@@ -32,7 +32,7 @@ margin_bottom = 936.0
 [node name="Label" type="Label" parent="."]
 margin_left = 351.0
 margin_top = 201.0
-margin_right = 641.0
+margin_right = 644.0
 margin_bottom = 215.0
 text = "Press and hold anywhere on the page to swim"
 
