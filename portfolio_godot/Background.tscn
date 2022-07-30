@@ -15,5 +15,5 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 512, 1248 )
-scale = Vector2( 2.06, 5.008 )
+scale = Vector2( 3.62, 8.80046 )
 texture = ExtResource( 1 )
