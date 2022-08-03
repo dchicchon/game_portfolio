@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/seaweed.png" type="Texture" id=1]
+
+[node name="Node" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -32, 2 )
+texture = ExtResource( 1 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( 263.863, 75.4352, 252.85, 89.5322, 247.564, 129.62, 248.004, 166.184, 246.683, 217.726, 247.123, 280.281, 248.445, 334.466, 248.445, 405.391, 248.445, 461.779, 250.207, 485.567, 256.815, 494.378, 269.59, 494.378, 280.163, 485.567, 282.366, 462.66, 281.925, 405.391, 280.163, 335.788, 281.925, 282.043, 283.247, 218.607, 282.366, 166.625, 281.925, 127.858, 276.198, 89.5322 )
+uv = PoolVector2Array( 263.863, 75.4352, 252.85, 89.5322, 247.564, 129.62, 248.004, 166.184, 246.683, 217.726, 247.123, 280.281, 248.445, 334.466, 248.445, 405.391, 248.445, 461.779, 250.207, 485.567, 256.815, 494.378, 269.59, 494.378, 280.163, 485.567, 282.366, 462.66, 281.925, 405.391, 280.163, 335.788, 281.925, 282.043, 283.247, 218.607, 282.366, 166.625, 281.925, 127.858, 276.198, 89.5322 )
+polygons = [ PoolIntArray( 1, 0, 20 ), PoolIntArray( 1, 2, 19, 20 ), PoolIntArray( 3, 2, 19, 18 ), PoolIntArray( 4, 3, 18, 17 ), PoolIntArray( 4, 5, 16, 17 ), PoolIntArray( 5, 6, 15, 16 ), PoolIntArray( 6, 7, 14, 15 ), PoolIntArray( 7, 8, 13, 14 ), PoolIntArray( 8, 9, 10, 11, 12, 13 ) ]
+bones = [ "Bone2D", PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0.68, 0.68, 0.68, 0.68, 0.68, 0.68, 0.68, 0.68, 0, 0, 0, 0, 0, 0 ), "Bone2D/Bone2D2", PoolRealArray( 0, 0, 0, 0, 0.68, 0.68, 0.68, 0, 0, 0, 0, 0, 0, 0, 0, 0.68, 0.68, 0.68, 0, 0, 0 ), "Bone2D/Bone2D2/Bone2D3", PoolRealArray( 0, 0, 0.68, 0.68, 0.68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.68, 0.68, 0.68, 0 ), "Bone2D/Bone2D2/Bone2D3/Bone2D4", PoolRealArray( 0.68, 0.68, 0.68, 0.68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.68, 0.68, 0.68 ) ]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
+position = Vector2( 233, 492 )
+rotation = -1.36531
+rest = Transform2D( 0.113438, -0.993545, 0.993545, 0.113438, 233, 492 )
+
+[node name="Bone2D2" type="Bone2D" parent="Skeleton2D/Bone2D"]
+position = Vector2( 133.902, -17.3012 )
+rotation = -0.117196
+rest = Transform2D( 1, 0, 0, 1, 133.902, -17.3012 )
+
+[node name="Bone2D3" type="Bone2D" parent="Skeleton2D/Bone2D/Bone2D2"]
+position = Vector2( 97.3674, -11.117 )
+rotation = -0.03198
+rest = Transform2D( 1, 0, 0, 1, 97.3674, -11.117 )
+
+[node name="Bone2D4" type="Bone2D" parent="Skeleton2D/Bone2D/Bone2D2/Bone2D3"]
+position = Vector2( 97.5943, -9.12985 )
+rotation = -0.193687
+rest = Transform2D( 0.992697, -0.120632, 0.120632, 0.992697, 97.5943, -9.12985 )
+default_length = 70.0

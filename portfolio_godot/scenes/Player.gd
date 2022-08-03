@@ -9,8 +9,8 @@ var speed = 0
 var max_speed = 110
 var acceleration = 200
 
-func _ready():
-	$SpeedNode/Speed.text = var2str(player_velocity)
+#func _ready():
+#	$SpeedNode/Speed.text = var2str(player_velocity)
 
 func move_tail_animation():
 	tail_animation.play("swim")

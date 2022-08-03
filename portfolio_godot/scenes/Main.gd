@@ -12,22 +12,19 @@ func spawn_school():
 	var left_school_spawn_location = get_node("LeftSchoolPath/SchoolSpawnLocation")
 	var right_school_spawn_location = get_node("RightSchoolPath/SchoolSpawnLocation")
 	var side = rng.randi_range(0,1)
-	var velocity = Vector2(rand_range(225.0, 250.0), 0.0)
-	var direction = rand_range(-PI / 36, PI / 36)
+	var school_position
+	var school_direction = rand_range(-PI / 36, PI / 36)
 	
 	if side == 0:
 		left_school_spawn_location.offset = randi()
-		school.position = left_school_spawn_location.position
-		direction += left_school_spawn_location.rotation
-		
+		school_position = left_school_spawn_location.position
+		school_direction += left_school_spawn_location.rotation
 	else:
 		right_school_spawn_location.offset = randi()
-		school.position = right_school_spawn_location.position
-		direction += right_school_spawn_location.rotation + PI
+		school_position = right_school_spawn_location.position
+		school_direction += right_school_spawn_location.rotation + PI
 	
-	school.rotation = direction
-	school.set_linear_velocity(velocity.rotated(direction))
-	#school.linear_velocity = velocity.rotated(direction)
+	school.init(school_position, school_direction)
 	add_child(school)
 
 func _on_StartTimer_timeout():
