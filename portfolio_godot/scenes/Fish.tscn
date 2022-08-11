@@ -88,4 +88,5 @@ lifetime_randomness = 0.43
 emission_shape = 2
 emission_rect_extents = Vector2( 4, 1 )
 gravity = Vector2( 0, 30 )
+scale_amount = 0.5
 color = Color( 0.521569, 0.858824, 0.901961, 1 )

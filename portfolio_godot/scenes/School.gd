@@ -4,7 +4,7 @@ export var color1 = Color()
 export var color2 = Color()
 export var color3 = Color()
 export var scale_min = 0.05
-export var scale_max = 1
+export var scale_max = 1.00
 export var speed_min = 150.0
 export var speed_max = 200.0
 

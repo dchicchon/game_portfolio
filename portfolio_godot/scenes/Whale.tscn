@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/whale.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "swim"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 122.0
+height = 462.0
+
+[node name="Whale" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+linear_damp = 0.0
+
+[node name="polygons" type="Node2D" parent="."]
+modulate = Color( 0.74902, 0.92549, 0.992157, 1 )
+position = Vector2( 84, 4 )
+
+[node name="Body" type="Polygon2D" parent="polygons"]
+self_modulate = Color( 0.996078, 1, 1, 1 )
+position = Vector2( -83, -5 )
+offset = Vector2( -407, -492 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 345.554, 435.821, 454.509, 418.657, 587.345, 402.239, 677.643, 411.94, 723.166, 430.597, 750.031, 466.418, 758.24, 513.433, 703.016, 564.179, 611.972, 586.567, 451.524, 596.269, 352.27, 573.134, 250.778, 529.851, 189.584, 493.284, 141.822, 478.358, 82.8672, 498.507, 111.972, 455.224, 81.3746, 391.791, 158.24, 441.791, 254.509, 447.015 )
+uv = PoolVector2Array( 345.554, 435.821, 454.509, 418.657, 587.345, 402.239, 677.643, 411.94, 723.166, 430.597, 750.031, 466.418, 758.24, 513.433, 703.016, 564.179, 611.972, 586.567, 451.524, 596.269, 352.27, 573.134, 250.778, 529.851, 189.584, 493.284, 141.822, 478.358, 82.8672, 498.507, 111.972, 455.224, 81.3746, 391.791, 158.24, 441.791, 254.509, 447.015 )
+
+[node name="Fin" type="Polygon2D" parent="polygons"]
+position = Vector2( 19, 4 )
+offset = Vector2( -282, -581 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 253.896, 578.449, 228.778, 601.909, 206.74, 638.638, 194.181, 669.207, 183.043, 701.672, 189.204, 706.885, 208.162, 704.041, 254.37, 651.435, 296.313, 597.88, 300.105, 578.686, 285.887, 568.496 )
+uv = PoolVector2Array( 253.896, 578.449, 228.778, 601.909, 206.74, 638.638, 194.181, 669.207, 183.043, 701.672, 189.204, 706.885, 208.162, 704.041, 254.37, 651.435, 296.313, 597.88, 300.105, 578.686, 285.887, 568.496 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="polygons/Fin"]
+autoplay = "swim"
+anims/RESET = SubResource( 2 )
+anims/swim = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = 1.5708
+shape = SubResource( 1 )
